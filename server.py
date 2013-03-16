@@ -19,6 +19,9 @@ print 'listening...'
 
 conn,addr = serv.accept() #accept the connection
 print '...connected!'
-conn.send('TEST')
+
+while 1:
+    data = conn.recv(BUFSIZE)
+    conn.send(data)
 
 conn.close()
